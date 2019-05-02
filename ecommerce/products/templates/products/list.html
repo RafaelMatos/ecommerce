@@ -1,0 +1,12 @@
+<p>Products List View</p>
+
+
+
+
+    {% for obj in object_list %}
+        <a href='{{obj.get_absolute_url}}'> {{ obj.title }} </a>
+        <p>Description: {{ obj.description }} </p>
+        <p>Price: {{ obj.price }} </p>
+        <p>----------------------------------</p>
+
+    {% endfor %}

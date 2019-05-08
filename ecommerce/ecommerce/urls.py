@@ -31,20 +31,14 @@ from django.conf.urls.static import static
 from .views import home_page,about_page,contact_page,login_page,register_page
 
 urlpatterns = [
-    path('', home_page),
-    path('about/',about_page),
-    path('contact/',contact_page),
-    path('login/',login_page),
+    path('', home_page,name="home"),
+    path('about/',about_page, name="about"),
+    path('contact/',contact_page,name="contact"),
+    path('login/',login_page,name="login"),
     path('admin/', admin.site.urls),
-    path('register/',register_page),
-    path('products/',include("products.urls")),
-    # path('featured/',ProductFeaturedListView.as_view()),
-    # re_path('^featured/(?P<pk>\d+)/$',ProductFeaturedDetailView.as_view()),
-    # path('products/',ProductListView.as_view()),
-    # path('products-fbv/',product_list_view),
-    # # re_path('^products/(?P<pk>\d+)/$',ProductDetailView.as_view()),
-    # re_path('^products/(?P<slug>[\w-]+)/$',ProductDetailSlugView.as_view()),
-    # path('products-fbv/<int:pk>/',product_detail_view),
+    path('register/',register_page,name="register"),
+    path('products/', include("products.urls",namespace="products")),
+   
 ]
 
 

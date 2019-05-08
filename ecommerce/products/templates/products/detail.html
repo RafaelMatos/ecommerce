@@ -1,8 +1,18 @@
-<p>It Works!!</p>
+{% extends "base.html"%}
 
-        <p> {{ object.title }} </p>
-        <p>Description: {{ object.description }} </p>
-        <p>Price: {{ object.price }} </p>
-        {% if object.image %}
-        <img src="{{ object.image.url }}" class="img-fluid" alt="VanGogh">
-        {% endif %}
+{% block content %}
+
+<div class="container">
+        <div class="row">
+            <div class="col">
+                <h1> {{ object.title }} </h1>
+                {{ object.timestamp|timesince}} ago
+                <p>Description: {{ object.description|linebreaks }} </p>
+                <p>Price: {{ object.price }} </p>
+                {% if object.image %}
+                        <img src="{{ object.image.url }}" class="rounded col-md-6 rounded" alt="VanGogh">
+                {% endif %}
+             </div>
+        </div>
+</div>
+{% endblock %}

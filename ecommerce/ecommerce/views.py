@@ -33,7 +33,8 @@ def contact_page(request):
       
        "title":"Contact Page!",
        "content":"Welcome to the Contact Page",
-       "form": contact_form
+       "form": contact_form,
+       
     }
 
   if contact_form.is_valid():
@@ -48,9 +49,10 @@ def contact_page(request):
 def login_page(request):
   form = LoginForm(request.POST or None)
   context = {
+    "title":"Login Page!",
     "form" : form
   }
-  print("User logged in")
+  
   # print(request.user.is_authenticated)
   if form.is_valid():
     print(form.cleaned_data)
@@ -59,6 +61,7 @@ def login_page(request):
     password = form.cleaned_data.get("password")
 
     user = authenticate(username=username, password=password)
+    
     # print(request.user.is_authenticated)
     print(user)
     if user is not None:
@@ -66,7 +69,9 @@ def login_page(request):
       # A backend authenticated the credentials
       login(request,user)
       # context['form'] = LoginForm()
+      print("User logged in")
       return redirect("/login")
+
     else:
           # No backend authenticated the credentials
       print("Error!")
@@ -93,33 +98,3 @@ def register_page(request):
     print(new_user)
   return render(request,"auth/register.html",context)
 
-def home_page_old(request):
-
-    html_ = """
-    
-       <!doctype html>
-        <html lang="en">
-          <head>
-            <!-- Required meta tags -->
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-            <!-- Bootstrap CSS -->
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-            <title>Hello, world!</title>
-          </head>
-          <body>
-            <div class="text-center">
-                <h1>Hello, world!We're Working!</h1>
-            </div>
-            <!-- Optional JavaScript -->
-            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-          </body>
-        </html>
-
-    """
-    return HttpResponse(html_)

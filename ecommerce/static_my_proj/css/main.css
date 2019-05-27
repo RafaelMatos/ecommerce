@@ -1,3 +1,53 @@
+
 body {
-    color: #ccc;
+    color: rgb(136, 136, 136);
+    /* background-image: url("bg-amendoeira.jpg");
+    /* background-color: rgba(201, 76, 76, 0.3);    */
+    /* background-color: rgba(238, 238, 238, 0.81) !important; */
+    background-image: url('bg-amendoeira2.png');
+    background-attachment:fixed;
+    background-size:cover;
+    /* background-blend-mode: normal; */
+    
+}
+
+.gogh{ 
+    font-family: vanGogh;
+    
+}
+
+.contactForm{
+    max-height: 5rem;
+}
+.btn-outline-warning{
+border-radius: 0px 5px 5px 0px;}
+
+.search-form button{
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    display: inline-block;
+}
+.search-form .btn:hover{
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+    /* background-color: red; */
+    background-color: #E1AC0B;
+}
+.navshadow{
+        
+	-webkit-box-shadow: 5px 6px 6px -6px black;
+    -moz-box-shadow: 5px 6px 6px -6px black;
+         box-shadow: 5px 6px 6px -6px black;
+}
+.navbar-brand{
+    font-size:30px;
+    
+}
+.navbar{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+@font-face {
+    font-family: vanGogh;
+    src: url('font/P22 Vincent Regular.ttf');
 }

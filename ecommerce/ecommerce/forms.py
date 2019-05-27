@@ -23,7 +23,7 @@ class ContactForm(forms.Form):
 
     comment = forms.CharField(widget = forms.Textarea(
         attrs = {
-            "class": "form-control",
+            "class": "form-control contactForm",
             "placeholder": "Your message comes here!"
         }
     ))

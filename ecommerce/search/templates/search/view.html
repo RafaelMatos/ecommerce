@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row mb-3">
+        {% if request.GET.q %}
+        <div class="col-12 mb-3">
+            Results for '<strong>{{ query }}</strong>'
+            <hr>
+        </div>
+        {% else %}
+            <div class="col-12 col-sm-8 col-md-8 col-lg-6 mb-3 search-form">
+                    Sorry, no results here!
+                    {% include 'search/snippets/search-form.html' %}
+                    
+            </div>
+            <hr class="col-12">
+        {% endif %}
+        
+    </div>
+        <div class="container">
+            {% if not query %}
+            <div class="row">
+                <h3>Features</h3>
+            </div>
+            {% endif %}
+            <div class="row">
+            {% for obj in object_list %}
+                <div class="col mb-3">
+                    {% include 'products/snippets/card.html' with instance=obj %}       
+                </div>
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

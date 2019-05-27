@@ -7,8 +7,9 @@ from .forms import ContactForm,LoginForm,RegisterForm
 def home_page(request):
 
     context = {
-       "title":"Hello World!",
-       "content":"Welcome to the Home Page",
+       "title":"What is done in love, is done well",
+      
+       "brand_name":"eGogh"
        
     }   
 
@@ -21,7 +22,7 @@ def about_page(request):
 
   context = {
        "title":"About Page!",
-       "content":"Welcome to the About Page"
+      #  "content":"Welcome to the About Page"
     }
 
   return render(request,"home_page.html",context)
@@ -31,8 +32,8 @@ def contact_page(request):
   contact_form = ContactForm(request.POST or None)
   context = {
       
-       "title":"Contact Page!",
-       "content":"Welcome to the Contact Page",
+       "title":"What would life be if we had no courage to attempt anything?",
+      #  "content":"Welcome to the Contact Page",
        "form": contact_form,
        
     }

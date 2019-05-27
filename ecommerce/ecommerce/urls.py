@@ -38,6 +38,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/',register_page,name="register"),
     path('products/', include("products.urls",namespace="products")),
+    path('search/', include("search.urls",namespace="search")),
+    
    
 ]
 

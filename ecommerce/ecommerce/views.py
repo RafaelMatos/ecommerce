@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate, login, get_user_model
 from .forms import ContactForm,LoginForm,RegisterForm
 
 def home_page(request):
-
+    print(request.session.get("first_name"))
     context = {
        "title":"What is done in love, is done well",
       

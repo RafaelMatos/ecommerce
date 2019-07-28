@@ -4,7 +4,7 @@
 
 <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col-12 col-md-6">
                 <h1> {{ object.title }} </h1>
                 {{ object.timestamp|timesince}} ago
                 <p>Description: {{ object.description|linebreaks }} </p>
@@ -12,6 +12,10 @@
                 {% if object.image %}
                         <img src="{{ object.image.url }}" class="rounded col-md-6 rounded" alt="VanGogh">
                 {% endif %}
+             </div>
+             <div class="col-12 col-md-6">
+                     {% include 'products/snippets/update-cart.html' with product=object cart=cart %}
+                     
              </div>
         </div>
 </div>

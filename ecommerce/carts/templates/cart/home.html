@@ -16,7 +16,7 @@
           {% for product in cart.products.all %}
           <tr>
             <th scope="row">{{ forloop.counter }}</th>
-            <td>{{product.title}}</td>
+            <td><a href='{{ product.get_absolute_url }}'>{{product.title}}</a> <small><a href="#">Remove?</a></small></td>
             <td>{{product.price}}</td>
             
           </tr>

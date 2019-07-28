@@ -4,11 +4,6 @@ from django.urls import path,re_path
 
 from .views import (
     ProductListView,
-    # product_list_view,
-    # ProductDetailView,
-    # product_detail_view,
-    # ProductFeaturedListView,
-    # ProductFeaturedDetailView,
     ProductDetailSlugView
     )
 

@@ -4,6 +4,7 @@ from products.models import Product
 from django.db.models.signals import pre_save, post_save, m2m_changed
 
 
+
 User = settings.AUTH_USER_MODEL
 
 class CartManager(models.Manager):

@@ -18,7 +18,7 @@ from django.urls import path,re_path,include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LogoutView
-from accounts.views import login_page,register_page
+from accounts.views import login_page,register_page,guest_register_view
 from .views import home_page,about_page,contact_page
 from carts.views import cart_home
 
@@ -30,6 +30,7 @@ urlpatterns = [
     path('logout/',LogoutView.as_view(),name="logout"),
     path('admin/', admin.site.urls),
     path('register/',register_page,name="register"),
+    path('register/guest/',guest_register_view,name="guest_register"),
     path('products/', include("products.urls",namespace="products")),
     path('search/', include("search.urls",namespace="search")),
     # path('cart/',cart_home,name="carts"),

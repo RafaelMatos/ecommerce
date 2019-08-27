@@ -21,7 +21,7 @@ class OrderManager(models.Manager):
             
             obj = qs.first()
         else:
-            obj = self.models.objects.create(billing_profile=billing_profile,cart=cart_obj)
+            obj = self.model.objects.create(billing_profile=billing_profile,cart=cart_obj)
             created = True
         return obj,created
 
